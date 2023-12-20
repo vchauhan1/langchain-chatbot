@@ -4,6 +4,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema.messages import SystemMessage, HumanMessage
 from langchain.memory import ChatMessageHistory
 import time
+import asyncio
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -24,10 +26,9 @@ def generate_response(user_input):
         socketio.sleep(0)
         response_content = chunk.content
         socketio.emit('receive_message', {'data': chunk.content})
-        time.sleep(0.5)
+        # time.sleep(0.1)
 
     history.add_message(SystemMessage(content=response_content))
-
 
 @socketio.on('send_message')
 def handle_message(json):

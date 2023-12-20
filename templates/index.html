@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" style="color-scheme: dark;" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4; /* Light gray background */
+            background-color: whitesmoke; /* Light gray background */
             color: #333; /* Darker text for contrast */
             margin: 0;
             padding: 0;
@@ -35,34 +35,48 @@
         }
     
         #chat-box {
-            background-color: #fff; /* White background for chat box */
-            border: 1px solid #ccc;
+            background-color: whitesmoke; /* White background for chat box */
+            border: 1px  #ccc;
+            font-family: math;
             border-radius: 5px;
             padding: 10px;
             margin: 20px 0;
-            height: 500px;
+            height: 700px;
+
             overflow-y: auto;
         }
+
     .bot-response, .user-message {
+        max-width: 80%;
+        word-wrap: break-word; /* Ensure long words do not overflow */
         padding: 10px;
         margin-bottom: 5px;
         border-radius: 10px;
-        word-wrap: break-word; /* Ensure long words do not overflow */
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .bot-response {
-        background-color: #F0F0F0;
-        max-width: 80%;
+        /* background-color: #F0F0F0; */
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
     }
 
     .user-message {
-        background-color: #DFF0D8;
-        max-width: 80%;
-        text-align: right;
+        /* background-color: #DFF0D8; */
+        max-width: 100%;
+        /* text-align: right; */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: flex-end;
     }
-    #send-button {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+    .bot-response strong, .user-message strong {
+        margin-right: 5px;
+        font-style: bold;
+        color:cornflowerblue
     }
     </style>
 </head>
